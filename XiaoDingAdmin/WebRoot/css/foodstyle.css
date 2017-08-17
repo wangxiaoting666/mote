@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+body{
+ font-family:"Helvetia Nenu", Helvetia, Arial, "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+ color:#666;
+}
+
+.text-description{
+	display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+    overflow: hidden;
+ }
+
+/*
+ *平板 大于等于768px
+*/
+@media(min-width: 768px)
+{
+	.text-description{
+        -webkit-line-clamp: 3;
+    }
+}
+
+/*
+ *桌面显示器 大于等于992
+*/
+@media(min-width: 992px)
+{
+	.text-description{
+        -webkit-line-clamp: 4;
+    }
+}
+/*
+ *桌面大显示器 大于等于1200
+*/
+@media(min-width: 1200px)
+{
+	.text-description{
+        -webkit-line-clamp: 5;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>标签列表</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/foodstyle.css" rel="stylesheet" type="text/css"></link>
+	    <link rel="stylesheet" type="text/css" href="css/default.css">
+        
+		
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+       
+	</head>
+	<body style="padding: 20px 30px 0 30px;">
+	<div class="row">
+		<div class="col-lg-12">
+	 	  	 <div class="input-group custom-search-form">
+	            <input type="text" class="form-control" placeholder="请输入标签名称">
+	            <span class="input-group-btn">
+	                <button class="btn btn-default" type="button">
+	                    <i class="glyphicon glyphicon-search"></i>
+	                </button>
+	            </span>
+	         </div>
+ 	  </div>
+ 	  <div class="col-lg-12">
+ 	  	<form role="form" class="form-horizontal">
+	 	  	<ul class="list-group" style="margin-top:10px">
+			   <li class="list-group-item">
+			   	 <label class="checkbox-inline">
+			      <input type="checkbox" name="optionsRadiosinline" id="optionsRadios3" 
+			         value="option1" checked> 坚果
+			     </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="checkbox" name="optionsRadiosinline" id="optionsRadios4" 
+			         value="option3" > 牛肉干
+			    </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="checkbox" name="optionsRadiosinline" id="optionsRadios4" 
+			         value="option2" > 夏威夷果
+			    </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="checkbox" name="optionsRadiosinline" id="optionsRadios5" 
+			         value="option2" > 松子
+			     </label>
+			   </li>
+			   <li class="list-group-item">
+			   	 <label class="checkbox-inline">
+			   	  <input type="checkbox" name="optionsRadiosinline" id="optionsRadios5" 
+			         value="option2" > 冰淇淋
+			     </label>
+			   </li>
+			</ul>
+			<div class="form-group">
+		      <div class="col-xs-offset-4">
+		         <button type="submit" class="btn btn-primary" id="labelCB_OK">确定</button>
+		         <button type="button" class="btn btn-default" id="labelCB_Cancel">取消</button>
+		      </div>
+		   </div>
+		</form>
+ 	  </div>
+ 	  
+	</div>
+	 			
+    <script>
+    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    //给父页面传值
+	$('#labelCB_OK').on('click', function(){
+	    parent.layer.msg("选择成功！");
+	    parent.layer.close(index);
+	});
+	
+	$('#labelCB_Cancel').on('click', function(){
+	    parent.layer.close(index);
+	});
+    </script>
+	</body>
+</html>

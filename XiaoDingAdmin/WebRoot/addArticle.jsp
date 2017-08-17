@@ -1,0 +1,489 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>管理主页</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/foodstyle.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"></link>
+	    <link href="component/metisMenu/dist/metisMenu.min.css" rel="stylesheet" type="text/css"></link>
+	    <link href="summernote/summernote.css" rel="stylesheet" type="text/css"></link>
+	    <link href="component/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />	
+        <link type="text/css" rel="stylesheet" href="demo/css/application.css">
+
+      
+		<script src="js/jquery.min.js"  type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"  type="text/javascript"></script> 
+         <!-- Metis Menu Plugin JavaScript -->
+	    <script src="component/metisMenu/dist/metisMenu.min.js"  type="text/javascript"></script>
+	    <script src="js/fileinput.js" type="text/javascript"  type="text/javascript"></script>
+        <script src="js/fileinput_locale_zh.js" type="text/javascript"></script>
+	    <script src="summernote/summernote.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="lib/jquery.raty.min.js"  type="text/javascript"></script>
+	    <!-- Custom Theme JavaScript -->
+	    <script src="js/sb-admin-2.js"  type="text/javascript"></script>
+	</head>
+	<body>
+		<!--
+            	作者：un_hui@163.com
+            	时间：2016-05-01
+            	描述：顶部导航栏
+         -->
+		<div id="wrapper">
+			 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			  <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.jsp">小丁美食管理后台</a>
+              </div>
+              <!-- /.navbar-header -->
+              
+              <ul class="nav navbar-top-links navbar-right" id="navbar-collapse">
+              	<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                    <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <!--
+            	作者：un_hui@163.com
+            	时间：2016-05-01
+            	描述：侧边栏
+            -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                	   <ul class="nav" id="side-menu">
+                	   	  <li>
+                        <a href="index.jsp"><i class="fa fa-chevron-circle-left fa-fw"></i>返回</a>
+                      </li>
+                	   	</ul>
+                </div>
+           </div>
+		  </nav>
+			 <div id="page-wrapper">
+			   <div class="row">
+			   	 <div class="col-lg-12">
+			   	 	<h1 class="page-header">文章编辑</h1>
+			   	 </div>
+			   	  
+			 	 <form role="form" class="form-horizontal" style="margin-left:30px" action="#" novalidate>
+					<div class="form-group">
+				      <div class="col-xs-2">
+				      	<label>标题:</label>
+				      </div>
+				      <div class="col-xs-8">
+				         <input type="text" class="form-control" placeholder="请输入文章标题"/>
+				         <input type="hidden" id="articleId" value="${id}"/>
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <div class="col-xs-2">
+				      	<label>作者:</label>
+				      </div>
+				      <div class="col-xs-8">
+				         <input type="text" class="form-control" placeholder="请输入作者姓名"/>
+				      </div>
+				    </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">图片:</label>
+				      <div class="col-xs-8">
+				         <input id="file-image" class="file-loading" name="file" type="file" multiple="true">
+				      </div>
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">品牌:</label>
+				      <div class="col-xs-4">
+				         <a class="btn btn-primary" id="chooseBrand">选择品牌</a>
+				      </div>
+				      <div class="col-xs-4">
+				      	<p id="brands"></p>
+				      </div>
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">标签:</label>
+				      <div class="col-xs-8">
+				         <a class="btn btn-primary" id="chooseLabel">选择标签</a>
+				      </div>
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">口味:</label>
+				      <div class="col-xs-9">
+						 <div id="flavor" class="target-demo"></div>
+					 </div>
+					 <div class="col-xs-1">
+					 	<div id="flavor-hint" class="hint"></div>
+					 </div>
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">卖相:</label>
+				      <div class="col-xs-9">
+						 <div id="appearance" class="target-demo"></div>
+					 </div>
+					 <div class="col-xs-1">
+					 	<div id="appearance-hint" class="hint"></div>
+					 </div>
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">包装:</label>
+				      <div class="col-xs-9">
+						 <div id="package" class="target-demo"></div>
+					 </div>
+					 <div class="col-xs-1">
+					 	<div id="package-hint" class="hint"></div>
+					 </div>
+				   </div>
+				   
+				   <div class="form-group">
+				      <label for="contents" class="col-xs-2">内容:</label>
+				      <div class="col-xs-8">
+				      	<textarea name="text" class="summernote" id="contents" title="Contents"></textarea>
+				      </div>				      
+				   </div>
+				   <div class="form-group">
+				      <label class="col-xs-2">标题图片:</label>
+				      <div class="col-xs-8">
+				         <input id="title-image" class="file" type="file">
+				      </div>
+				   </div>
+	               <div class="form-group">
+				      <label for="contents" class="col-xs-2">简介:</label>
+				      <div class="col-xs-8">
+				      	<textarea class="form-control" rows="3" placeholder="请填写文章简介"></textarea>
+				     </div>	
+				   </div>
+			        <div class="form-group">
+				      <div class="col-xs-offset-4">
+				         <button type="submit" class="btn btn-primary" id="addArticle_OK">保存</button>
+				         <button type="button" class="btn btn-default" id="addArticle_Cancel">取消</button>
+				      </div>
+				   </div>
+			    </form>
+			    <!--end form -->
+			   </div>
+			 </div>
+			 <!--page-wrapper           -->
+		</div>
+		<!--wrapper           -->
+		<script src="layer/layer.js"></script>
+		<script src="layer/extend/layer.ext.js"></script>
+		<script>
+			$("#file-image").fileinput({
+		        language: 'zh', //设置语言
+		        uploadUrl: 'loadFoodImage.action', //上传的地址
+		        allowedFileExtensions : ['jpg', 'png','bmp'],//接收的文件后缀
+		        maxFileCount: 5,
+			    showCancel: false,
+			    showClose: true,
+			    showUpload:false,
+		        browseClass: "btn btn-primary", //按钮样式             
+		        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>", 
+		        enctype: 'multipart/form-data'
+	        });
+	         $('#flavor').raty({
+			  	number: 10,//多少个星星设置
+				score: 0,//初始值是设置
+				targetType: 'number',//类型选择，number是数字值，hint，是设置的数组值
+		        path      : 'demo/img',
+		        cancelOff : 'cancel-off-big.png',
+		        cancelOn  : 'cancel-on-big.png',
+		        size      : 24,
+		        starHalf  : 'star-half-big.png',
+		        starOff   : 'star-off-big.png',
+		        starOn    : 'star-on-big.png',
+		        target    : '#flavor-hint',
+		        cancel    : false,
+		        targetKeep: false,
+		        precision : false,//是否包含小数
+		        click: function(score, evt) {
+		          alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+		        }
+		      });  
+		      $('#appearance').raty({
+			  	number: 10,//多少个星星设置
+				score: 0,//初始值是设置
+				targetType: 'number',//类型选择，number是数字值，hint，是设置的数组值
+		        path      : 'demo/img',
+		        cancelOff : 'cancel-off-big.png',
+		        cancelOn  : 'cancel-on-big.png',
+		        size      : 24,
+		        starHalf  : 'star-half-big.png',
+		        starOff   : 'star-off-big.png',
+		        starOn    : 'star-on-big.png',
+		        target    : '#appearance-hint',
+		        cancel    : false,
+		        targetKeep: false,
+		        precision : false,//是否包含小数
+		        click: function(score, evt) {
+		          alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+		        }
+		      }); 
+		       $('#package').raty({
+			  	number: 10,//多少个星星设置
+				score: 0,//初始值是设置
+				targetType: 'number',//类型选择，number是数字值，hint，是设置的数组值
+		        path      : 'demo/img',
+		        cancelOff : 'cancel-off-big.png',
+		        cancelOn  : 'cancel-on-big.png',
+		        size      : 24,
+		        starHalf  : 'star-half-big.png',
+		        starOff   : 'star-off-big.png',
+		        starOn    : 'star-on-big.png',
+		        target    : '#package-hint',
+		        cancel    : false,
+		        targetKeep: false,
+		        precision : false,//是否包含小数
+		        click: function(score, evt) {
+		          alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+		        }
+		      }); 
+		    
+            $(document).ready(function () {
+            	
+            	var foodId = ${id};
+            	 $("#file-image").fileinput('refresh',{
+      			   uploadExtraData: {"id":foodId}
+      		   });
+		        
+		      $('#contents').summernote({
+		        height: 200
+		      });
+		     /* $('form').on('submit', function (e) {
+		        e.preventDefault();
+		        //alert($('.summernote').summernote('code'));
+		        alert($('.summernote').val());
+		      });*/
+		    });
+		   $("#title-image").fileinput({
+		        allowedFileExtensions: ['jpg', 'png','gif']
+	        });
+	        $('#chooseBrand').on('click', function(){
+                //iframe层-父子操作
+				layer.open({
+				  type: 2,
+				  title: '品牌选择',
+				  area: ['700px', '530px'],
+				  fix: false, //不固定
+				  content: 'brandList.jsp'
+				});
+			});
+			$('#chooseLabel').on('click', function(){
+                //iframe层-父子操作
+				layer.open({
+				  type: 2,
+				  title: '标签选择',
+				  area: ['700px', '530px'],
+				  fix: false, //不固定
+				  content: 'labelList.jsp'
+				});
+			});
+		</script>
+	</body>
+</html>

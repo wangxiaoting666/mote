@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>品牌列表</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/foodstyle.css" rel="stylesheet" type="text/css"></link>
+	    <link rel="stylesheet" type="text/css" href="css/default.css">
+        <link href="pagination/css/qunit-1.11.0.css" rel="stylesheet"></link>
+		
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+       
+	</head>
+	<body style="padding: 20px 30px 0 30px;">
+	<div class="row">
+		<div class="col-lg-12">
+	 	  	 <div class="input-group custom-search-form">
+	            <input type="text" class="form-control" placeholder="请输入品牌名称">
+	            <span class="input-group-btn">
+	                <button class="btn btn-default" type="button">
+	                    <i class="glyphicon glyphicon-search"></i>
+	                </button>
+	            </span>
+	         </div>
+ 	  </div>
+ 	  <div class="col-lg-12">
+ 	  	<form role="form" class="form-horizontal">
+	 	  	<ul class="list-group" style="margin-top:10px">
+			   <li class="list-group-item">
+			   	 <label class="checkbox-inline">
+			      <input type="radio" name="optionsRadiosinline" id="optionsRadios3" 
+			         value="option1" checked> 三只松鼠
+			     </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="radio" name="optionsRadiosinline" id="optionsRadios4" 
+			         value="option3" > KFC
+			    </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="radio" name="optionsRadiosinline" id="optionsRadios4" 
+			         value="option2" > 苹果
+			    </label>
+			   </li>
+			   <li class="list-group-item">
+			   	<label class="checkbox-inline">
+			   	  <input type="radio" name="optionsRadiosinline" id="optionsRadios5" 
+			         value="option2" > 微软
+			     </label>
+			   </li>
+			   <li class="list-group-item">
+			   	 <label class="checkbox-inline">
+			   	  <input type="radio" name="optionsRadiosinline" id="optionsRadios5" 
+			         value="option2" > Nokia
+			     </label>
+			   </li>
+			</ul>
+             <div align="center">
+             	<ul id="brandPager">hello</ul>
+             </div>
+			<div class="form-group">
+		      <div class="col-xs-offset-4">
+		         <button type="submit" class="btn btn-primary" id="brandRadio_OK">确定</button>
+		         <button type="button" class="btn btn-default" id="brandRadio_Cancel">取消</button>
+		      </div>
+		   </div>
+		</form>	
+ 	  </div>
+	</div>
+	 	
+	<script src="pagination/js/bootstrap-paginator.js"></script>
+    <script src="pagination/js/qunit-1.11.0.js"></script>
+    <script>
+    $(document).ready(function(){
+		var options = {
+	            bootstrapMajorVersion: 3, //版本
+	            currentPage: 1, //当前页数
+	            totalPages: 10, //总页数
+	            itemTexts: function (type, page, current) {
+	              switch (type) {
+	                case "first":
+	                  return "首页";
+	                case "prev":
+	                  return "上一页";
+	                case "next":
+	                  return "下一页";
+	                case "last":
+	                  return "末页";
+	                case "page":
+	                  return page;
+	              }
+	             }//点击事件，用于通过Ajax来刷新整个list列表
+	            };
+	     $('#brandPager').bootstrapPaginator(options);
+	});
+    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    //给父页面传值
+	$('#brandRadio_OK').on('click', function(){
+	   // parent.layer.msg("选择成功！");
+	    var str = "<label id = '5'> hello,world" + "</lable>"
+	    parent.$('#brands').html(str);
+	    parent.layer.close(index);
+	});
+	
+	$('#brandRadio_Cancel').on('click', function(){
+	    parent.layer.close(index);
+	});
+	
+   
+    </script>
+	</body>
+</html>

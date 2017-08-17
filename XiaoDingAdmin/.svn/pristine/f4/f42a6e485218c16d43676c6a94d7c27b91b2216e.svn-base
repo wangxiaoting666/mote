@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>新增排行</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/foodstyle.css" rel="stylesheet" type="text/css"></link>
+	   
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"></link>
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+       
+	    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	</head>
+	<body>
+	 <div id="page-wrapper" style="margin-top: 20px;">
+	 	<div class="row">
+ 		   <form role="form" class="form-horizontal" style="margin-left:30px">
+ 		   	   <div class="form-group">
+		          <div class="col-xs-2">
+		      	    <label>标题:</label>
+		          </div>
+		         <div class="col-xs-8">
+		           <input type="text" class="form-control" placeholder="请输入排行标题"/>
+		         </div>
+		       </div>
+		       <div class="form-group">
+		          <div class="col-xs-2">
+		      	    <label>日期:</label>
+		          </div>
+		         <div class="col-xs-8">
+                    <input size="16" type="text" value="2016-06-15 14:45" readonly id="form_datetime" class="form-control">
+        			 </div>
+		       </div>
+		       <div class="form-group">
+			      <label class="col-xs-2">标签:</label>
+			      <div class="col-xs-8">
+			         <a class="btn btn-primary" id="chooseLabel">选择标签</a>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-xs-offset-4">
+			         <button type="submit" class="btn btn-info" id="addList_OK">确定</button>
+			         <button type="button" class="btn btn-default" id="addList_Cancel">取消</button>
+			      </div>
+			   </div>
+ 		   </form>
+	 	</div>
+	 	
+	 </div>
+	 <!--page-wrapper           -->
+		
+	    <script src="layer/layer.js"></script>
+		<script src="layer/extend/layer.ext.js"></script>
+		<script>
+		    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+		    //给父页面传值
+			$('#addList_OK').on('click', function(){
+			    parent.layer.msg("添加成功！");
+			    parent.layer.close(index);
+			});
+			
+			$('#addList_Cancel').on('click', function(){
+			    parent.layer.close(index);
+			});
+			 $('#form_datetime').datetimepicker({
+			 	language:  'zh-CN',
+		        weekStart: 1,
+		        todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+		        showMeridian: 1
+		    });
+ 
+
+			$('#chooseLabel').on('click', function(){
+                //iframe层-父子操作
+				layer.open({
+				  type: 2,
+				  title: '标签选择',
+				  area: ['450px', '300px'],
+				  fix: false, //不固定
+				  content: 'labelList.html'
+				});
+			});
+			
+      </script>
+	</body>
+</html>
